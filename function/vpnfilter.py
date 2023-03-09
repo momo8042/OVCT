@@ -7,7 +7,7 @@ import sys
 def filter(result):
     Input_Country = " "
     print('\n-----------------------------------\n')
-    selection = input("【 Please enter the number for selecting one of the criteria to filter. 】\n\n1. Country \n2. Speed \n 3. Country & Speeds \n\n=> ")
+    selection = input("【 Please enter the number for selecting one of the criteria to filter. 】\n\n1. Country \n2. Speed \n3. Country & Speeds \n\n=> ")
 
     # Enter 1: country
     if selection == "1":
