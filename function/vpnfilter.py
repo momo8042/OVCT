@@ -12,17 +12,20 @@ def filter(result):
     # Enter 1: country
     if selection == "1":
         result = filter_country(result)
+        ask_save_or_not(result)
         ask_connection_or_not()
 
     # Enter 2: speed
     elif selection == "2":
         result = filter_speed(result, Input_Country)
+        ask_save_or_not(result)
         ask_connection_or_not()
 
     # Enter 3: country & speed
     elif selection == "3":
         result = filter_country(result)
-        filter_speed(result, Input_Country)
+        result = filter_speed(result, Input_Country)
+        ask_save_or_not(result)
         ask_connection_or_not()
     else:
         pass
@@ -46,12 +49,6 @@ def filter_country(Source):
             print('\n[Your input is not in the list, please enter it again.]')
     Source = Source[Source.CountryLong.eq(Input_Country)]
 
-    Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
-    if Save_or_not == "Y" or Save_or_not == "y":
-        print("save_file(Source)")
-    else:
-        pass
-
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
     print('\n-----------------------------------\n\n')
@@ -66,12 +63,6 @@ def filter_speed(Source, Input_Country):
     print('The Speed Range: ' + SpeedMin.to_string(index=False) + ' Mbps' + ' ~ ' + SpeedMax.to_string(index=False) + ' Mbps')
     Speed = int(input("\n【 How fast the VPN would you prefer 】\n\n=> "))
     Source = Source.query('Speed >= {}'.format(Speed))
-
-    Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
-    if Save_or_not == "Y" or Save_or_not == "y":
-        print("save_file(Source)")
-    else:
-        pass
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
@@ -100,6 +91,14 @@ def ask_connection_or_not():
         sys.exit()
     else:
         pass
+
+def ask_save_or_not():
+    Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
+    if Save_or_not == "Y" or Save_or_not == "y":
+        print("save_file(Source)")
+    else:
+        pass
+
 def Export(Source):
     print('\n-----------------------------------\n')
     Path = input("【 Where would you like to save the CSV file? 】 \n\nPlease enter the absolute path and the \"file name\" (E.g. /home/user/Desktop/[choose a file_name]) \n\n=> ")
