@@ -60,6 +60,7 @@ def filter_speed(Source, Input_Country):
     if Input_Country == " ":
         pass
     else:
+        print("HERE")
         Source = Source[Source.CountryLong.eq(Input_Country)]
         print(Source)
 
