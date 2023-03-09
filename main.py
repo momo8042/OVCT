@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
 
-    result = pandas.read_csv("./resources/PublicVPN_List.csv")
+    result = pandas.read_csv("./resources/all_resource.csv")
 
     while(True):
     
