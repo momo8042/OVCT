@@ -57,13 +57,6 @@ def filter_country(Source):
     return Source
 
 def filter_speed(Source, Input_Country):
-    if Input_Country == " ":
-        pass
-    else:
-        print("HERE")
-        '''Source = Source[Source.CountryLong.eq(Input_Country)]
-        print(Source)'''
-
     Speed_list = Source.filter(items=['Speed'])
     SpeedMax = Speed_list.max()  
     SpeedMin = Speed_list.min()
