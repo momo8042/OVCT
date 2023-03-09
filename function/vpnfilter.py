@@ -69,8 +69,10 @@ def filter_speed(Source, Input_Country):
     Source = Source.query('Speed >= {} and '.format(Speed))
 
     Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
-    if Save_or_not == "Y" or "y":
+    if Save_or_not == "Y" or Save_or_not == "y":
         print("save_file(Source)")
+    else:
+        pass
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
@@ -83,7 +85,7 @@ def no_filter(Source):
 
 def ask_connection_or_not():
     Connection_or_not = input("\n\n【 Do you want to connection vpn now?(Y/N) 】 \n\n=> ")
-    if Connection_or_not == "Y" or "y":
+    if Connection_or_not == "Y" or Connection_or_not == "y":
         vpn_hostname, vpn_ip, vpn_country = vpnselection.select_one(filtered_csv_path = "./resources/all_resource.csv", show_list = "n")
         ovpn_file_content = decode.vpn(filtered_csv_path, vpn_hostname)
         
@@ -97,7 +99,8 @@ def ask_connection_or_not():
             print("Sorry, your operating system is not supported!")
             sys.exit()
         sys.exit()
-        
+    else:
+        pass
 def Export(Source):
     print('\n-----------------------------------\n')
     Path = input("【 Where would you like to save the CSV file? 】 \n\nPlease enter the absolute path and the \"file name\" (E.g. /home/user/Desktop/[choose a file_name]) \n\n=> ")
