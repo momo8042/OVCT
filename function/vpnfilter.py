@@ -20,7 +20,7 @@ def filter(result):
     # Enter 3: country & speed
     elif selection == "3":
         result = filter_country(result)
-        result = filter_speed(result, Input_Country)
+        filter_speed(result, Input_Country)
         ask_connection_or_not()
     else:
         pass
