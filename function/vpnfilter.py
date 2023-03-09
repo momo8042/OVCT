@@ -52,7 +52,7 @@ def filter_country(Source):
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
-    print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
+    print('\n-----------------------------------\n\n')
 
     return Source
 
@@ -73,7 +73,7 @@ def filter_speed(Source, Input_Country):
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
-    print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
+    print('\n-----------------------------------\n\n')
 
     return Source
 
