@@ -11,20 +11,17 @@ def filter(result):
     if selection == "1":
         result = filter_country(result)
         ask_connection_or_not()
-        return filtered_csv_path
 
     # Enter 2: speed
     elif selection == "2":
         result = filter_speed(result)
         ask_connection_or_not()
-        return filtered_csv_path
 
     # Enter 3: country & speed
     elif selection == "3":
         result = filter_country(result)
-        result = filter_speed(result)
+        result = filter_speed(result, country)
         ask_connection_or_not()
-        return filtered_csv_path
     else:
         pass
         
