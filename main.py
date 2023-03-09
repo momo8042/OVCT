@@ -1,8 +1,12 @@
-from function import webcrawler, vpnfilter, vpnselection, decode, connection
+#from function import webcrawler, vpnfilter, vpnselection, decode, connection
 import platform
 import pandas
 import os
 import sys
+
+import set_init
+set_init.init_file_name()
+from functions import *
 
 if __name__ == "__main__":
 
@@ -18,7 +22,8 @@ if __name__ == "__main__":
         
         if function_chioce == '1':
             result = webcrawler.load_table()
-            vpnfilter.Export(result)
+            #vpnfilter.Export(result)
+            file_storage.file_update(result)
 
         elif function_chioce == '2':
             print('\n-----------------------------------\n')
