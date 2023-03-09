@@ -68,7 +68,7 @@ def filter_speed(Source, Input_Country):
     print('\n-----------------------------------\n')
     print('The Speed Range: ' + SpeedMin.to_string(index=False) + ' Mbps' + ' ~ ' + SpeedMax.to_string(index=False) + ' Mbps')
     Speed = int(input("\n【 How fast the VPN would you prefer 】\n\n=> "))
-    Source = Source.query('Speed >= {} and '.format(Speed))
+    Source = Source.query('Speed >= {}'.format(Speed))
 
     Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
     if Save_or_not == "Y" or Save_or_not == "y":
