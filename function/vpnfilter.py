@@ -14,13 +14,13 @@ def filter(result):
 
     # Enter 2: speed
     elif selection == "2":
-        result = filter_speed(result)
+        result = filter_speed(result, Input_Country)
         ask_connection_or_not()
 
     # Enter 3: country & speed
     elif selection == "3":
         result = filter_country(result)
-        result = filter_speed(result, country)
+        result = filter_speed(result, Input_Country)
         ask_connection_or_not()
     else:
         pass
@@ -52,7 +52,7 @@ def filter_country(Source):
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
 
-    return Source
+    return Source, Input_Country
 
 def filter_speed(Source, Input_Country):
     if Input_Country == " ":
