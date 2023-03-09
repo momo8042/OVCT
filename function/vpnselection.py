@@ -13,7 +13,7 @@ def select_one(filtered_csv_path, show_list):
     vpn_hostname = input("【 Please input VPN ISP hostname 】\n\n=> ")
 
     while(vpn_hostname not in list(list_file['#HostName'])):
-        print("\n[Sorry, this Hostname isn't in the PublicVPN_list.csv, please input again.]")
+        print("\n[Sorry, this Hostname isn't in the all_resources.csv, please input again.]")
         print('\n-----------------------------------\n')
         vpn_hostname = input("【 Please input VPN ISP hostname 】\n\n=> ")        
     
