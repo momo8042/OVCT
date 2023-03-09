@@ -24,6 +24,8 @@ def filter(result):
         result = filter_speed(result)
         ask_connection_or_not()
         return filtered_csv_path
+    else:
+        pass
         
 def filter_country(Source):
     Country_list = Source.filter(items=['CountryLong'])
@@ -97,3 +99,13 @@ def ask_connection_or_not():
             print("Sorry, your operating system is not supported!")
             sys.exit()
         sys.exit()
+        
+def Export(Source):
+    print('\n-----------------------------------\n')
+    Path = input("【 Where would you like to save the CSV file? 】 \n\nPlease enter the absolute path and the \"file name\" (E.g. /home/user/Desktop/[choose a file_name]) \n\n=> ")
+    Path += '.csv'
+    # columns = ['HostName', 'Country', 'IP', 'Speed (Mbps)', 'OpenVPN_ConfigData_Base64']
+    # source_CSV = Source.reindex(columns=columns)
+    Source.to_csv(Path, sep=',', index=False)
+    print("\n[ The result has outputted ! ]\n")
+    return
