@@ -61,6 +61,7 @@ def filter_speed(Source, Input_Country):
         pass
     else:
         Source = Source[Source.CountryLong.eq(Input_Country)]
+        print(Source)
 
     Speed_list = Source.filter(items=['Speed'])
     SpeedMax = Speed_list.max()  
