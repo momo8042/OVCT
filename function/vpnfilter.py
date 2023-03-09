@@ -48,7 +48,7 @@ def filter_country(Source):
 
     Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
     if Save_or_not == "Y" or "y":
-        save_file(Source)
+        print("save_file(Source)")
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
@@ -72,7 +72,7 @@ def filter_speed(Source, Input_Country):
 
     Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
     if Save_or_not == "Y" or "y":
-        save_file(Source)
+        print("save_file(Source)")
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
