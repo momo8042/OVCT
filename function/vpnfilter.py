@@ -45,8 +45,10 @@ def filter_country(Source):
     Source = Source[Source.CountryLong.eq(Input_Country)]
 
     Save_or_not = input("\n\n【 Save as another list.(Y/N) 】 \n\n=> ")
-    if Save_or_not == "Y" or "y":
+    if Save_or_not == "Y" or Save_or_not == "y":
         print("save_file(Source)")
+    else:
+        pass
 
     print('\n-----------------------------------\n\n【 Public VPN 10 filtered records 】\n')
     print(Source[['#HostName', 'CountryLong', 'IP', 'Speed']].head(10))
